@@ -1,5 +1,6 @@
 ---
-#This Playbook validates a directory and Creates a file,Writes content in that and prints the status
+#This Playbook validates a directory and Creates a file,Writes content in that and prints the status.
+
 - name: Basic Configuration Playbook
   hosts: all
   become: yes  # Run tasks with sudo (root) privileges
