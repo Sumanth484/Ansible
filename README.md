@@ -67,3 +67,12 @@ ansible -i inventory all -m "shell" -a "touch /tmp/sample"
 
 Now you can verify whether the files are created on the Target Servers or not.
 
+## Step 6: If you want to run multiple tasks on target machines go with Ansible playbook instead of Ad-Hoc commands
+
+Create Ansible Playbook and write the tasks in YAML.
+After Creating Playbook execute below command to run tasks on target machines.
+
+```bash
+ansible-playbook -i myinventory all playbook.yml
+```
+
