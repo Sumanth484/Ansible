@@ -73,6 +73,6 @@ Create Ansible Playbook and write the tasks in YAML.
 After Creating Playbook execute below command to run tasks on target machines.
 
 ```bash
-ansible-playbook -i myinventory all playbook.yml
+ansible-playbook -i inventory all playbook.yml
 ```
 
