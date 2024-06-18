@@ -69,8 +69,10 @@ Now you can verify whether the files are created on the Target Servers or not.
 
 ## Step 6: Run Ansible playbook instead of Ad-Hoc commands
 
-1.If you want to run multiple tasks on target machines go with Ansible Playbook
+1.If you want to run multiple tasks on target machines go with Ansible Playbook.
+
 2.Create Ansible Playbook and write the tasks in YAML.
+
 3.After Creating Playbook execute below command to run tasks on target machines.
 
 ```bash
