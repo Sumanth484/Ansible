@@ -1,0 +1,20 @@
+---
+#Playbook to install git and Java to target machines
+
+- name: Install Git and Java
+  hosts: all
+  become: yes
+  tasks:
+    - name: Update the apt package index
+      apt:
+        update_cache: yes
+
+    - name: Install Git
+      apt:
+        name: git
+        state: present
+
+    - name: Install Java
+      apt:
+        name: openjdk-11-jdk
+        state: present
