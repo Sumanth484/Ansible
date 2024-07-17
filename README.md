@@ -30,19 +30,25 @@ If you are just starting with Ansible, follow the steps below to get started.
 1. **Generate Public and Private Key on `Ansible_Server`**:
 
     ```bash
-    ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+    ssh-keygen -t rsa -b 4096
     ```
 
     Follow the instructions and press enter to generate the key in the default path.
 
-2. **Copy the Public Key to Target Servers**:
+2. **Copy the .pem file attatched to target servers**:
+
+    ```sh
+    scp /path/to/local/.pem username@remote_host:/path/to/remote/directory/
+    ```
+
+3. **Copy the Public Key to Target Servers**:
 
     ```bash
     ssh-copy-id -i ~/.ssh/id_rsa.pub -o "IdentitiesOnly=yes" -i /path/to/your.pem ubuntu@target_server1_ip
     ssh-copy-id -i ~/.ssh/id_rsa.pub -o "IdentitiesOnly=yes" -i /path/to/your.pem ubuntu@target_server2_ip
     ```
 
-3. **Verify SSH Access to Target Servers**:
+4. **Verify SSH Access to Target Servers**:
 
     ```bash
     ssh ubuntu@target_server1_ip
