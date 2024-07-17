@@ -38,7 +38,8 @@ If you are just starting with Ansible, follow the steps below to get started.
 2. **Copy the .pem file attatched to target servers**:
 
     ```sh
-    scp /path/to/local/.pem username@remote_host:/path/to/remote/directory/
+     scp -i <.pem file to authenticate remote server> <copy file path> ubuntu@remotehost:<remote-path>
+     Ex: scp -i aws-keypair.pem aws-keypair.pem ubuntu@3.83.255.75:/home/ubuntu/
     ```
 
 3. **Copy the Public Key to Target Servers**:
