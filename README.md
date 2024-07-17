@@ -44,12 +44,14 @@ If you are just starting with Ansible, follow the steps below to get started.
 
 3. **Copy the Public Key to Target Servers**:
 
+    create .ssh folder if not there in target server and add local RSA public key to authorized_keys.
+   
     ```bash
-    ssh-copy-id -i ~/.ssh/id_rsa.pub -o "IdentitiesOnly=yes" -i /path/to/your.pem ubuntu@target_server1_ip
-    ssh-copy-id -i ~/.ssh/id_rsa.pub -o "IdentitiesOnly=yes" -i /path/to/your.pem ubuntu@target_server2_ip
+    ssh -i /path/to/your.pem ubuntu@target-server1-ip 'mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys' < ~/.ssh/id_rsa.pub
+    ssh -i /path/to/your.pem ubuntu@target-server2-ip 'mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys' < ~/.ssh/id_rsa.pub
     ```
 
-4. **Verify SSH Access to Target Servers**:
+5. **Verify SSH Access to Target Servers**:
 
     ```bash
     ssh ubuntu@target_server1_ip
