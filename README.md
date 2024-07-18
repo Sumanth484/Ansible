@@ -37,12 +37,14 @@ If you are just starting with Ansible, follow the steps below to get started.
 
 2. **Copy the .pem file attatched to target servers**:
 
+   Copy the target serves pem file from local machine to Ansible servers.
+   
     ```sh
      scp -i <.pem file to authenticate remote server> <copy file path> ubuntu@remotehost:<remote-path>
      Ex: scp -i aws-keypair.pem aws-keypair.pem ubuntu@3.83.255.75:/home/ubuntu/
     ```
 
-3. **Copy the Public Key to Target Servers**:
+4. **Copy the Public Key to Target Servers**:
 
     create .ssh folder if not there in target server and add local RSA public key to authorized_keys.
    
@@ -83,6 +85,12 @@ Now you can verify whether the files are created on the Target Servers or not.
 3. After Creating Playbook execute below command to run tasks on target machines.
 
 ```bash
-ansible-playbook -i inventory all playbook.yml
+ansible-playbook -i inventory playbook.yml
+```
+
+4.If you want to run the playbook in specific target servrs then use --limit attribute
+
+```bash
+ansible-playbook -i inventory playbook.yml --limit webservers
 ```
 
