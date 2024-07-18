@@ -92,5 +92,8 @@ ansible-playbook -i inventory playbook.yml
 
 ```bash
 ansible-playbook -i inventory playbook.yml --limit webservers
+ansible-playbook -i inventory.yml site.yml --limit "192.168.1.101,192.168.1.201"
 ```
+
+
 
