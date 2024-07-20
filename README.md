@@ -44,7 +44,7 @@ If you are just starting with Ansible, follow the steps below to get started.
      Ex: scp -i aws-keypair.pem aws-keypair.pem ubuntu@3.83.255.75:/home/ubuntu/
     ```
 
-4. **Copy the Public Key to Target Servers**:
+3. **Copy the Public Key to Target Servers**:
 
     create .ssh folder if not there in target server and add local RSA public key to authorized_keys.
    
@@ -52,8 +52,13 @@ If you are just starting with Ansible, follow the steps below to get started.
     ssh -i /path/to/your.pem ubuntu@target-server1-ip 'mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys' < ~/.ssh/id_rsa.pub
     ssh -i /path/to/your.pem ubuntu@target-server2-ip 'mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys' < ~/.ssh/id_rsa.pub
     ```
+    You can use the below command as well instead of above command to install your public key in remote-host
 
-5. **Verify SSH Access to Target Servers**:
+   ```sh
+    ssh-copy-id -f "-o IdentityFile <path to .pem file>" user@targrt-serverip
+    ```
+
+4. **Verify SSH Access to Target Servers**:
 
     ```bash
     ssh ubuntu@target_server1_ip
