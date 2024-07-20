@@ -1,4 +1,4 @@
-## Setup EC2 Collection and Authentication
+## Setup Ansible Collection and Vault
 
 ### Install Ansible
 
