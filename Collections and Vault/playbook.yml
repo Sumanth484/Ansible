@@ -1,0 +1,19 @@
+---
+- name: Provision EC2 instances
+  hosts: localhost
+  gather_facts: no
+  vars_files:
+    - variables.yml
+  tasks:
+    - name: Launch 3 EC2 instances
+      amazon.aws.ec2_instance:
+        aws_access_key: "{{ aws_access_key }}"
+        aws_secret_key: "{{ aws_secret_key }}"
+        region: us-east-1
+        instance_type: t2.micro
+        image_id: ami-0abcdef1234567890  # Replace with a valid AMI ID
+        count: 3
+        key_name: aws-keypair  # Replace with your key pair name
+        security_groups: 
+          - default
+      register: ec2
