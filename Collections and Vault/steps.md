@@ -29,7 +29,7 @@ openssl rand -base64 2048 > vault-password
 Execute the below command to encrypt the pass.yml file and write the key value pairs inside the pass.yml file
 
 ```sh
-ansible-vault create pass.yml --vault-password-file <password-file>
+ansible-vault create variables.yml --vault-password-file <password-file>
 ```
 
 ### Create playbook
